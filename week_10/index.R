@@ -64,10 +64,6 @@ gwynnda <- png::readPNG(here("images", "gwynnda.png"))
 mister <- png::readPNG(here("images", "mister.png"))
 professor <- png::readPNG(here("images", "professor.png"))
 
-## import fonts
-text_font <-"Shadows Into Light"
-sysfonts::font_add_google(text_font)
-
 # For first time geom_pictogram icon user may need to operate following steps to import the icon file:
 # waffle::install_fa_fonts() # check the location of font in your computer and install them
 # font_import() # import font to R
@@ -103,7 +99,8 @@ p1 <- ggplot(df1, aes(label = trash_type, values = trash_pct)) +
         plot.title = element_text(hjust = 0.5,
                                   vjust = 1.5,
                                   size = 11),
-        plot.caption = element_text(size = 5),
+        plot.caption = element_text(hjust = 2,
+                                    size = 5),
         strip.text = element_blank(),
         text = element_text(family = "Comic Sans MS")
   )
